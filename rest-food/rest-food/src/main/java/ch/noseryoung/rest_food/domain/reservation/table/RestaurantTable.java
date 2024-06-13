@@ -14,11 +14,8 @@ public class RestaurantTable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer tableId;
 
-    @Column(name = "number", nullable = false, unique = true)
-    private Integer number;
-
     @Column(name = "capacity", nullable = false)
-    private int capacity;
+    private Integer capacity;
 
 }
 

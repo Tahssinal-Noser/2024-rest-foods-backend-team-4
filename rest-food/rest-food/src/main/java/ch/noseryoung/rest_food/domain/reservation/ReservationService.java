@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 
 @Service
 public class ReservationService{
@@ -44,4 +46,13 @@ public class ReservationService{
         }
         return reservationRepository.save(reservation);
     }
+
+        public void deleteReservation(Long reservationId){
+            Reservation reservation = getReservationById(reservationId);
+            reservationRepository.delete(reservation);
+        }
+
+        public List<Reservation> getAllReservations(){
+            return  reservationRepository.findAll();
+        }
 }
