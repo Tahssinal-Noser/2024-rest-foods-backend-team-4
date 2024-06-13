@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/2024-rest-foods-backend-team-4.iml" filepath="$PROJECT_DIR$/.idea/2024-rest-foods-backend-team-4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-food.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-food.main.iml" />
     </modules>
   </component>
 </project>
