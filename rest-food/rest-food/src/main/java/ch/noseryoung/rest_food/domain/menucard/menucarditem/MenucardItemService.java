@@ -32,10 +32,10 @@ public class MenucardItemService {
                 .orElseThrow(() -> new IllegalArgumentException("MenucardItem not found for this id: " + id));
         menucardItem.setName(menucardItemDetails.getName());
         menucardItem.setDescription(menucardItemDetails.getDescription());
+        menucardItem.setImage(menucardItemDetails.getImage());
         menucardItem.setPrice(menucardItemDetails.getPrice());
         menucardItem.setCategory(menucardItemDetails.getCategory());
         menucardItem.setChefsChoice(menucardItemDetails.getChefsChoice());
-        //menucardItem.setMenucard(menucardItemDetails.getMenucard());
         return menucardItemRepository.save(menucardItem);
     }
 
