@@ -1,10 +1,11 @@
 package ch.noseryoung.rest_food.domain.menucard;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MenucardService {
@@ -20,7 +21,23 @@ public class MenucardService {
         return menucardRepository.findAll();
     }
 
-    public Optional<Menucard> getMenucardById(Long id) {
-        return menucardRepository.findById(id);
+    public Menucard getMenucardById(Long menucardId) {
+        return menucardRepository.findById(menucardId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Menucard not found for this id: " + menucardId));
+    }
+
+    public Menucard createMenucard(Menucard menucard) {
+        return menucardRepository.save(menucard);
+    }
+
+    public Menucard updateMenucard(Long menucardId, Menucard menucardDetails) {
+        Menucard menucard = getMenucardById(menucardId);
+        menucard.setName(menucardDetails.getName());
+        return menucardRepository.save(menucard);
+    }
+
+    public void deleteMenucard(Long menucardId) {
+        Menucard menucard = getMenucardById(menucardId);
+        menucardRepository.delete(menucard);
     }
 }

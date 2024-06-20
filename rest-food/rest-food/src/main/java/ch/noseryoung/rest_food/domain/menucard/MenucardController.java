@@ -1,7 +1,6 @@
 package ch.noseryoung.rest_food.domain.menucard;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,22 +17,29 @@ public class MenucardController {
         this.menucardService = menucardService;
     }
 
+    @PostMapping
+    public ResponseEntity<Menucard> createMenucard(@RequestBody Menucard menucard) {
+        return ResponseEntity.status(201).body(menucardService.createMenucard(menucard));
+    }
+
+    @PutMapping("/{menucardId}")
+    public ResponseEntity<Menucard> updateMenucard(@PathVariable Long menucardId, @RequestBody Menucard menucardDetails) {
+        return ResponseEntity.status(201).body(menucardService.updateMenucard(menucardId, menucardDetails));
+    }
+
+    @GetMapping("/{menucardId}")
+    public ResponseEntity<Menucard> getMenucardById(@PathVariable Long menucardId) {
+        return ResponseEntity.status(200).body(menucardService.getMenucardById(menucardId));
+    }
+
     @GetMapping
     public ResponseEntity<List<Menucard>> getAllMenucards() {
-        List<Menucard> menucards = menucardService.getAllMenucards();
-        return ResponseEntity.ok(menucards);
+        return ResponseEntity.status(200).body(menucardService.getAllMenucards());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Menucard> getMenucardById(@PathVariable Long id) {
-        Menucard menucard = menucardService.getMenucardById(id).orElse(null);
-        return ResponseEntity.ok(menucard);
+    @DeleteMapping("/{menucardId}")
+    public ResponseEntity<Void> deleteMenucard(@PathVariable Long menucardId) {
+        menucardService.deleteMenucard(menucardId);
+        return ResponseEntity.status(204).build();
     }
-
-    /**
-     * complete crud get request
-     *
-     * TODO: finish all Crud request (delete, post, put)
-     */
-
 }
