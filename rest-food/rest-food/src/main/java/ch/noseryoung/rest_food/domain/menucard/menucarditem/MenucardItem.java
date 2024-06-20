@@ -21,6 +21,9 @@ public class MenucardItem {
     @Column(name = "description", nullable = false)
     private String description;
 
+    @Column(name= "image", nullable = false)
+    private String image;
+
     @Column(name = "price", nullable = false)
     private Double price;
 
