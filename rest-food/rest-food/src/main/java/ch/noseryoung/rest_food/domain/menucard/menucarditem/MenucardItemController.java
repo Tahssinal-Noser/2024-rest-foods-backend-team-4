@@ -26,7 +26,7 @@ public class MenucardItemController {
 
     @GetMapping("/{id}")
     public ResponseEntity<MenucardItem> getMenucardItem(@PathVariable Long id) {
-       MenucardItem menucardItem = menucardItemService.getMenucardItemById(id).orElse(null);
+       MenucardItem menucardItem = menucardItemService.getMenucardItemById(id);
 
         return ResponseEntity.ok(menucardItem);
     }

@@ -19,8 +19,9 @@ public class MenucardItemService {
         return menucardItemRepository.findAll();
     }
 
-    public Optional<MenucardItem> getMenucardItemById(Long id) {
-        return menucardItemRepository.findById(id);
+    public MenucardItem getMenucardItemById(Long id) {
+        return menucardItemRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("MenucardItem not found for this id: " + id));
     }
 
     public MenucardItem createMenucardItem(MenucardItem menucardItem) {
