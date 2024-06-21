@@ -21,7 +21,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(404).body("The requested resource was not found.");
     }
 
-
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> handleMANVE() {
         return ResponseEntity.status(400).body("The request contains invalid data. Please check and try again.");
