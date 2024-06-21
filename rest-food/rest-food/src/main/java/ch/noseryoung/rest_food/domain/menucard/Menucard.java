@@ -2,6 +2,7 @@ package ch.noseryoung.rest_food.domain.menucard;
 
 import ch.noseryoung.rest_food.domain.menucard.menucarditem.MenucardItem;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ public class Menucard {
 
 
     @Column(name = "name", nullable = false)
+    @Size(min= 5, max = 25)
     private String name;
 
 
