@@ -18,15 +18,16 @@ public class MenucardItemController {
         this.menucardItemService = menucardItemService;
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping
     public ResponseEntity<List<MenucardItem>> getAllMenucardItems() {
         List<MenucardItem> menucardItems = menucardItemService.getAllMenucardItems();
         return ResponseEntity.ok(menucardItems);
     }
-
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{id}")
     public ResponseEntity<MenucardItem> getMenucardItem(@PathVariable Long id) {
-       MenucardItem menucardItem = menucardItemService.getMenucardItemById(id);
+        MenucardItem menucardItem = menucardItemService.getMenucardItemById(id);
 
         return ResponseEntity.ok(menucardItem);
     }
