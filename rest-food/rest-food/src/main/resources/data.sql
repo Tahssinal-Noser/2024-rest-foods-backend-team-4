@@ -64,10 +64,7 @@ INSERT INTO menucard_item (name, description, price, category, chefs_choice, ima
 VALUES ('Cappuccino', 'Espresso with steamed milk', 2.99, 'Drink', true, 'https://methodicalcoffee.com/cdn/shop/articles/cap.jpg?v=1684507364');
 
 INSERT INTO menucard_item (name, description, price, category, chefs_choice, image)
-VALUES ('Lemonade', 'Freshly squeezed lemonade', 1.99, 'Drink', false, 'https://media.tenor.com/f9Ek6QJFnrkAAAAM/parse-black.gif');
+VALUES ('Lemonade', 'Freshly squeezed lemonade', 1.99, 'Drink', false, 'https://i2.wp.com/lmld.org/wp-content/uploads/2022/04/Lemonade-4.jpg');
 
 INSERT INTO menucard_item (name, description, price, category, chefs_choice, image)
 VALUES ('Mojito', 'Rum, mint, lime, and soda water', 7.99, 'Drink', false, 'https://www.liquor.com/thmb/MJRVqf-itJGY90nwUOYGXnyG-HA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mojito-720x720-primary-6a57f80e200c412e9a77a1687f312ff7.jpg');
-
-INSERT INTO menucard_item (name, description, price, category, chefs_choice, image)
-VALUES ('Cocktail', 'Mixed drink without alcohol', 5.99, 'Drink', false, 'https://www.liquor.com/thmb/sUKZSwJj7slc5l-LDyK8eajT0LY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/very-sexy-martini-720x720-primary-b1212ebf73f54f898a56f7f0b60c0a34.jpg');
