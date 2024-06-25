@@ -20,6 +20,7 @@ public class RestaurantTableController {
         this.restaurantTableService = restaurantTableService;
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping
     @Operation(
             summary = "Create a new restaurant table",
@@ -33,6 +34,7 @@ public class RestaurantTableController {
         return ResponseEntity.status(201).body(restaurantTableService.saveTable(restaurantTable));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/{tableId}")
     @Operation(
             summary = "Update an existing restaurant table by ID",
@@ -47,6 +49,7 @@ public class RestaurantTableController {
         return ResponseEntity.status(200).body(restaurantTableService.updateTable(tableId, tableDetails));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{tableId}")
     @Operation(
             summary = "Get a restaurant table by ID",
@@ -60,6 +63,7 @@ public class RestaurantTableController {
         return ResponseEntity.status(200).body(restaurantTableService.getTableById(tableId));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping
     @Operation(
             summary = "Get all restaurant tables",
@@ -72,6 +76,7 @@ public class RestaurantTableController {
         return ResponseEntity.status(200).body(restaurantTableService.getAllTables());
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/{tableId}")
     @Operation(
             summary = "Delete a restaurant table by ID",

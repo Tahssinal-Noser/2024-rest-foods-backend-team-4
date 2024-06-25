@@ -35,6 +35,7 @@ public class MenucardItemController {
         return ResponseEntity.ok(menucardItems);
     }
 
+
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{id}")
     @Operation(
@@ -50,6 +51,7 @@ public class MenucardItemController {
         return ResponseEntity.ok(menucardItem);
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping
     @Operation(
             summary = "Create a new menu card item",
@@ -64,6 +66,7 @@ public class MenucardItemController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdMenucardItem);
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/{id}")
     @Operation(
             summary = "Update an existing menu card item by ID",
@@ -79,6 +82,7 @@ public class MenucardItemController {
         return ResponseEntity.ok(updatedMenucardItem);
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/{id}")
     @Operation(
             summary = "Delete a menu card item by ID",

@@ -20,6 +20,7 @@ public class MenucardController {
         this.menucardService = menucardService;
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping
     @Operation(
             summary = "Create a new menu card",
@@ -33,6 +34,7 @@ public class MenucardController {
         return ResponseEntity.status(201).body(menucardService.createMenucard(menucard));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/{menucardId}")
     @Operation(
             summary = "Update an existing menu card by ID",
@@ -46,7 +48,7 @@ public class MenucardController {
     public ResponseEntity<Menucard> updateMenucard(@PathVariable Long menucardId, @RequestBody Menucard menucardDetails) {
         return ResponseEntity.status(200).body(menucardService.updateMenucard(menucardId, menucardDetails));
     }
-
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{menucardId}")
     @Operation(
             summary = "Get a menu card by ID",
@@ -60,6 +62,7 @@ public class MenucardController {
         return ResponseEntity.status(200).body(menucardService.getMenucardById(menucardId));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping
     @Operation(
             summary = "Get all menu cards",
@@ -72,6 +75,7 @@ public class MenucardController {
         return ResponseEntity.status(200).body(menucardService.getAllMenucards());
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/{menucardId}")
     @Operation(
             summary = "Delete a menu card by ID",

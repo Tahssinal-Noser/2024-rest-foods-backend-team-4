@@ -20,6 +20,7 @@ public class ReservationController {
         this.reservationService = reservationService;
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping
     @Operation(
             summary = "Create a new reservation",
@@ -33,6 +34,7 @@ public class ReservationController {
         return ResponseEntity.status(201).body(reservationService.saveReservations(reservation));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/{reservationId}")
     @Operation(
             summary = "Update an existing reservation by ID",
@@ -47,6 +49,7 @@ public class ReservationController {
         return ResponseEntity.status(200).body(reservationService.updateReservation(reservationId, reservationDetails));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{reservationId}")
     @Operation(
             summary = "Get a reservation by ID",
@@ -60,6 +63,7 @@ public class ReservationController {
         return ResponseEntity.status(200).body(reservationService.getReservationById(reservationId));
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping
     @Operation(
             summary = "Get all reservations",
@@ -72,6 +76,7 @@ public class ReservationController {
         return ResponseEntity.status(200).body(reservationService.getAllReservations());
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/{reservationId}")
     @Operation(
             summary = "Delete a reservation by ID",
