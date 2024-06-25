@@ -20,6 +20,11 @@ public class MenucardController {
         this.menucardService = menucardService;
     }
 
+    /**
+     * Creates a new menu card with the provided details.
+     * @param menucard the menu card to be created
+     * @return ResponseEntity containing the created menu card
+     */
     @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping
     @Operation(
@@ -34,6 +39,12 @@ public class MenucardController {
         return ResponseEntity.status(201).body(menucardService.createMenucard(menucard));
     }
 
+    /**
+     * Updates an existing menu card identified by ID with provided details.
+     * @param menucardId the ID of the menu card to update
+     * @param menucardDetails new details to update the menu card
+     * @return ResponseEntity with the updated menu card
+     */
     @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/{menucardId}")
     @Operation(
@@ -48,6 +59,12 @@ public class MenucardController {
     public ResponseEntity<Menucard> updateMenucard(@PathVariable Long menucardId, @RequestBody Menucard menucardDetails) {
         return ResponseEntity.status(200).body(menucardService.updateMenucard(menucardId, menucardDetails));
     }
+
+    /**
+     * Retrieves a specific menu card by its ID.
+     * @param menucardId the ID of the menu card to retrieve
+     * @return ResponseEntity containing the requested menu card
+     */
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{menucardId}")
     @Operation(
@@ -62,6 +79,10 @@ public class MenucardController {
         return ResponseEntity.status(200).body(menucardService.getMenucardById(menucardId));
     }
 
+    /**
+     * Fetches all menu cards available.
+     * @return ResponseEntity with a list of all menu cards
+     */
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping
     @Operation(
@@ -75,6 +96,11 @@ public class MenucardController {
         return ResponseEntity.status(200).body(menucardService.getAllMenucards());
     }
 
+    /**
+     * Deletes a menu card by its ID.
+     * @param menucardId the ID of the menu card to delete
+     * @return ResponseEntity without content
+     */
     @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/{menucardId}")
     @Operation(
