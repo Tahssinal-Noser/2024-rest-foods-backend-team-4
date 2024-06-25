@@ -23,4 +23,3 @@ public class Authority {
     @Column(name = "name", unique = true, nullable = false)
     private String name;
 }
-
