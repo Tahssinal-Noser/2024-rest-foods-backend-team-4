@@ -31,6 +31,17 @@ public class ReservationService{
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Reservation with ID " + reservationId + " not found"));
     }
 
+    /**
+     * Updates the details of an existing reservation. If a new table is specified and exists,
+     * it assigns the reservation to that table. An error is thrown if the reservation or table
+     * does not exist.
+     *
+     * @param reservationId the ID of the reservation to update
+     * @param reservationDetails updated properties for the reservation
+     * @return the updated reservation
+     * @throws ResponseStatusException if the reservation or specified table ID is not found
+     */
+
     public Reservation updateReservation(Long reservationId, Reservation reservationDetails){
 
         Reservation reservation = getReservationById(reservationId);
