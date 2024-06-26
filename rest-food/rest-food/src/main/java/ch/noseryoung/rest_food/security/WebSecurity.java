@@ -14,11 +14,11 @@ public class WebSecurity {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
+                .csrf(csrf -> csrf.disable())  // disable security
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/v3/api-docs", "/v3/api-docs/swagger-config", "/swagger-ui/**").permitAll()
-                        .anyRequest().authenticated())
+                    .anyRequest().permitAll())
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
     }
 }
