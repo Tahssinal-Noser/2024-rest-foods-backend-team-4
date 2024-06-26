@@ -9,5 +9,4 @@ class RestFoodApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
